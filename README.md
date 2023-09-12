@@ -2,6 +2,8 @@
 
 Code for the development and internal validation of a model predicting mortality risk after a fall in older adults
 
+Read the published paper here :neckbeard: https://doi.org/10.1093/ageing/afad159
+
 Access that quarto-pub link for all the information and the structure of the code in chunks 👇:
 
 https://alkat19.quarto.pub/mortality_after_a_fall_using_diors/
