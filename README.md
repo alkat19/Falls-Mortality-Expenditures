@@ -6,7 +6,7 @@ Read the published paper here :neckbeard: https://doi.org/10.1093/ageing/afad159
 
 Access that quarto-pub link for all the information and the structure of the code in chunks 👇:
 
-https://alkat19.quarto.pub/mortality_after_a_fall_using_diors/
+https://alkat19.quarto.pub/predicting-mortality-risk-after-a-fall-in-older-adults-using-health-care-spending-patterns-a-population-based-cohort-study/
 
 The code 👆 illustrates the analysis workflow only and cannot run since the datasets are not allowed to be shared publicly due to their nature.
 
