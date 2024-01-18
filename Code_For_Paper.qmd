@@ -361,7 +361,7 @@ df_fill <- tidyr::complete(df_new,PERSON_ID,Dates = seq(as.Date('2011-01-01'), a
 df_fill <- df_fill |>  
   group_by(PERSON_ID) |> 
   tidyr::fill(Date_Of_Death, Date_Of_Birth, Gender, Bereavement_Date, 
-              Age, Two_Years_Before_Fall, Survival, Income,
+              Age, Two_Years_Before_Fall, Income,
               Education, Bereavement, Death_Event, 
               Time_To_Refall, Second_Admit_Date, Event_Refall, SEX, Medications,
               First_Admit_Date, Death_Time,
@@ -380,7 +380,7 @@ df_fill <- df_fill |>
 # Now we have to arrange the expenditures into a wide format
 
 full_wide <- df_fill |>
-  select(PERSON_ID, Gender, Age, Survival, Income, 
+  select(PERSON_ID, Gender, Age, Income, 
          Education, Bereavement, Death_Event, Time_To_Refall, Event_Refall, 
          Medications, Death_Time, Total_Costs, Weeks) |> 
   pivot_wider(names_from = Weeks, values_from = Total_Costs, names_prefix = 'Week_')
@@ -419,7 +419,7 @@ full_wide <- df_fill |>
 ```{r}
 
 full_wide_year <- df_fill |>
-  select(Survival, Gender, Age, Income, Education, Bereavement,
+  select(Gender, Age, Income, Education, Bereavement,
          Medications, Total_Costs, Weeks, Death_Time) |> 
   pivot_wider(names_from = Weeks, values_from = Total_Costs, names_prefix = 'Week_')
 
@@ -436,7 +436,7 @@ full_wide_year$Survival1 <- as.factor(full_wide_year$Survival1)
 
 full_wide_year <- full_wide_year |> 
   relocate(Survival1,.after = Survival) |> 
-  select(-Survival,-Death_Time)
+  select(-Death_Time)
 ```
 
 #### Let's create some data splits in case we need to do a single training/test split
